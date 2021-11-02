@@ -3,21 +3,21 @@ package br.com.google.automation.runners;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 
 import br.com.google.automation.common.Base;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty",
-                "html:target/cucumber-reports/cucumber-pretty",
-                "json:target/cucumber-reports/cucumber.json"},
+        features = "src/test/resources/features",
+        glue= {"br.com.google.automation"},
+        plugin = { "pretty", "json:target/Cucumber.json",
+                "html:target/cucumber"},
         monochrome = true,
-        features = "src/test/resources/features"
-        ,glue= {"br.com.google.automation"}
+        snippets = SnippetType.CAMELCASE
 )
 
 public class CucumberRunner {
