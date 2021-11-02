@@ -15,13 +15,13 @@ public class Browsers {
         if ("chromeHeadless".equals(browser)) {
             option = new ChromeOptions();
             option.addArguments("headless", "disable-gpu", "disable-popup-blocking", "no-sandbox",
-                    "start-maximized", "window-size=1920,1080", "disable-dev-shm-usage", "--ignore-certificate-errors");
+                    "start-maximized", "window-size=1680,1050", "disable-dev-shm-usage", "--ignore-certificate-errors");
             driver = new ChromeDriver(option);
         } else if ("firefox".equals(browser)) {
             driver = new FirefoxDriver();
         } else if ("chrome".equals(browser)) {
             option = new ChromeOptions();
-            option.addArguments("start-maximized", "window-size=1920,1080", "no-sandbox");
+            option.addArguments("start-maximized", "window-size=1680,1050", "no-sandbox");
             driver = new ChromeDriver(option);
         } else {
             option = new ChromeOptions();

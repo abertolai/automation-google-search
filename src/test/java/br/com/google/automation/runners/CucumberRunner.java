@@ -1,5 +1,6 @@
 package br.com.google.automation.runners;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -25,5 +26,10 @@ public class CucumberRunner {
     public static void setup() {
         String browserName = System.getProperty("browser");
         Base.setDriver(browserName);
+    }
+
+    @AfterClass
+    public static void closeBrowser() {
+        Base.driver.close();
     }
 }
