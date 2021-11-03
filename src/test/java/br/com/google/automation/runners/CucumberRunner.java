@@ -14,8 +14,8 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue= {"br.com.google.automation"},
-        plugin = { "pretty", "json:target/Cucumber.json",
-                "html:target/cucumber"},
+        plugin = { "pretty", "json:target/cucumber-reports.json",
+                "html:target/cucumber-reports.html"},
         monochrome = true,
         snippets = SnippetType.CAMELCASE
 )
